@@ -1,0 +1,24 @@
+<!-- Panel Start -->
+<section class="home">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-10 home-form">
+                <div class="form-text">
+                    <p>
+                            Playlist Ekle
+                        </p>
+                    </div>
+                    <form action="/admin/playlist/<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>" method="post">
+                        <div class="form-row">
+                            <div class="form-group mb-4">
+                                <label for="title">Url</label>
+                                <input type="url" name="link" class="form-input form-control form-control-lg" id="title" placeholder="Playlist url">
+                            </div>
+                        </div>
+                        <button type="submit" id="playlistAdd" name="playlistAdd" value="playlistAdd" class="form-btn mt-2 btn btn-lg btn-outline-primary">Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Panel End -->

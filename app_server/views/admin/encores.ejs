@@ -1,0 +1,180 @@
+<!-- Panel Start -->
+<section class="home">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-10 home-form">
+        <div class="form-text">
+          <p>
+            İstek Şarkılar
+          </p>
+        </div>
+        <% if(typeof status !='undefined' && status==true){ %>
+
+          <div class="container" style="padding: 0;">
+            <div class="alert alert-success alert-dismissible fade show" role="alert"
+              style="display: flex; justify-content: space-between;" id="successAlert">
+              İşlem Başarılı Bir Şekilde Gerçekleştirilmiştir
+              <button type="button" class="btn-close" aria-label="Close"
+                style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+          <% } %>
+            <% if(typeof status !='undefined' && status==false){ %>
+
+              <div class="container" style="padding: 0;">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                  style="display: flex; justify-content: space-between;" id="successAlert">
+                  İşlem Gerçekleştirilemedi
+                  <button type="button" class="btn-close" aria-label="Close"
+                    style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+              </div>
+              <% } %>
+                <table class="form-table table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Şarkı İsmi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(var i=0; i < fetch.length; i++){%>
+                      <tr>
+                        <td>
+                          <%= fetch[i]['songName'] %>
+                        </td>
+                        <td style="float:right">
+                          <span id="<%= fetch[i]['_id'] %>">
+                            <input type="hidden" name="id" value="<%= fetch[i]['_id'] %>">
+                            <input type="hidden" name="link" value="<%= fetch[i]['songLink'] %>">
+                            <input type="hidden" name="songDuration" value="<%= fetch[i]['songDuration'] %>">
+                            <button name="deleteEncore" data-action="deleteEncore" id="deleteBtn"
+                              class="deleteBtn btn btn-outline-danger me-2">Sil</button>
+                          </span>
+                        </td>
+                      </tr>
+                      <% } %>
+                  </tbody>
+                </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Panel End -->
+<script>
+  // Select all delete buttons by class name
+  const deleteButtons = document.querySelectorAll(".deleteBtn");
+  const addButtons = document.querySelectorAll(".addBtn");
+  const specialAddButtons = document.querySelectorAll(".specialAddBtn");
+
+  // Attach a click event handler to each delete button
+  deleteButtons.forEach((deleteBtn) => {
+    deleteBtn.addEventListener("click", function () {
+      const parentSpan = deleteBtn.parentElement;
+      const id = parentSpan.querySelector('[name="id"]').value;
+      console.log(link);
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const form = document.createElement('form');
+          form.method = 'POST';
+          form.action = '/admin/encores';
+
+          // Create hidden input for id
+          const idInput = document.createElement('input');
+          idInput.type = 'hidden';
+          idInput.name = 'id';
+          idInput.value = id;
+
+          // Create deleteContent button as an input
+          const deleteContentButton = document.createElement('input');
+          deleteContentButton.type = 'text';
+          deleteContentButton.name = 'deleteEncore';
+          deleteContentButton.value = 'deleteEncore';
+
+          form.appendChild(deleteContentButton);
+          form.appendChild(idInput);
+          document.body.appendChild(form);
+
+          // Submit the form
+          form.submit();
+        }
+      });
+    });
+  });
+
+  // Attach a click event handler to each delete button
+
+  // Attach a click event handler to each delete button
+  specialAddButtons.forEach((specialAddBtn) => {
+    specialAddBtn.addEventListener("click", function () {
+      const parentSpan = specialAddBtn.parentElement;
+      const id = parentSpan.querySelector('[name="id"]').value;
+      const link = parentSpan.querySelector('[name="link"]').value;
+      const songDuration = parentSpan.querySelector('[name="songDuration"]').value;
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, open it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const form = document.createElement('form');
+          form.method = 'POST';
+          form.action = '/admin/encores';
+
+          // Create hidden input for id
+          const idInput = document.createElement('input');
+          idInput.type = 'hidden';
+          idInput.name = 'id';
+          idInput.value = id;
+
+          // Create hidden input for link
+          const linkInput = document.createElement('input');
+          linkInput.type = 'hidden';
+          linkInput.name = 'link';
+          linkInput.value = link;
+
+          const songDurationInput = document.createElement('input');
+          songDurationInput.type = 'hidden';
+          songDurationInput.name = 'songDuration';
+          songDurationInput.value = songDuration;
+
+          // Create deleteContent button as an input
+          const deleteContentButton = document.createElement('input');
+          deleteContentButton.type = 'text';
+          deleteContentButton.name = 'addEncore';
+          deleteContentButton.value = 'addEncore';
+
+
+          form.appendChild(deleteContentButton);
+          form.appendChild(idInput);
+          form.appendChild(linkInput);
+          form.appendChild(songDurationInput);
+          document.body.appendChild(form);
+
+          // Submit the form
+          form.submit();
+        }
+      });
+    });
+  });
+
+  function closeAlert() {
+        var successAlert = document.getElementById('successAlert');
+        successAlert.style.display = 'none';
+    }
+</script>

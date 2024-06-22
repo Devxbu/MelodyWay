@@ -1,0 +1,81 @@
+<% if(admin.cafe!='admin'){ %>
+    <script>
+        location.assign(`/admin/song/<%= admin.cafe%>`);
+    </script>
+    <% } %>
+<!-- Panel Start -->
+<section class="home">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-10 home-form">
+                <div class="form-text">
+                    <p>
+                        İletişim Bilgileri
+                    </p>
+                </div>
+                <% if(typeof status !='undefined' && status==true){ %>
+
+                    <div class="container" style="padding: 0;">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert"
+                            style="display: flex; justify-content: space-between;" id="successAlert">
+                            İşlem Başarılı Bir Şekilde Gerçekleştirilmiştir
+                            <button type="button" class="btn-close" aria-label="Close"
+                                style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+                        <% if(typeof status !='undefined' && status==false){ %>
+
+                            <div class="container" style="padding: 0;">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                    style="display: flex; justify-content: space-between;" id="successAlert">
+                                    İşlem Gerçekleştirilemedi
+                                    <button type="button" class="btn-close" aria-label="Close"
+                                        style="outline: none; border: none; background: transparent;"
+                                        onclick="closeAlert()">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <% } %>
+                                <form action="/admin/contact" method="post">
+                                    <div class="form-row">
+                                        <div class="form-group mb-4">
+                                            <label for="title">Telefon</label>
+                                            <input type="text" name="phone"
+                                                class="form-input form-control form-control-lg" id="title"
+                                                value="<%=fetch['phone']%>" placeholder="Telefon">
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="about">Eposta</label>
+                                            <input type="text" name="email"
+                                                class="form-input form-control form-control-lg" id="about"
+                                                value="<%=fetch['email']%>" placeholder="Eposta">
+                                        </div>
+                                        <div class="form-group mb-4">
+                                            <label for="keyword">Adres</label>
+                                            <input type="text" name="adress"
+                                                class="form-input form-control form-control-lg" id="keyword"
+                                                value="<%=fetch['adress']%>" placeholder="Adres">
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="id" value="<%=fetch['_id']%>">
+                                    <button type="submit" name="contact"
+                                        class="form-btn mt-2 btn btn-lg btn-outline-primary">Değiştir</button>
+
+                                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    function closeAlert() {
+        var successAlert = document.getElementById('successAlert');
+        successAlert.style.display = 'none';
+    }
+</script>
+<!-- Panel End -->

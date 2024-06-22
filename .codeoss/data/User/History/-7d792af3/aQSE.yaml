@@ -1,0 +1,24 @@
+runtime: nodejs
+env: flex
+
+runtime_config:
+  nodejs_version: 22.
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+
+# servis tipini belirtin
+service: default
+
+# bu bölüm, hangi URL'lerin hangi servislerle eşleşeceğini belirtir
+handlers:
+- url: /.*
+  script: auto
+
+# gerekirse otomatik olarak ölçeklendirme ayarları
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 10
+  cpu_utilization:
+    target_utilization: 0.65

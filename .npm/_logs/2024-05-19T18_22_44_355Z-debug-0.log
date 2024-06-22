@@ -1,0 +1,24 @@
+0 verbose cli /usr/local/nvm/versions/node/v20.13.0/bin/node /usr/local/nvm/versions/node/v20.13.0/bin/npm
+1 info using npm@10.7.0
+2 info using node@v20.13.0
+3 silly config:load:file:/usr/local/nvm/versions/node/v20.13.0/lib/node_modules/npm/npmrc
+4 silly config:load:file:/home/kuzey3258/.cache/typescript/5.2/.npmrc
+5 silly config:load:file:/home/kuzey3258/.npmrc
+6 silly config:load:file:/usr/local/nvm/versions/node/v20.13.0/etc/npmrc
+7 verbose title npm install @types/bcrypt@ts5.2 @types/bcryptjs@ts5.2 @types/body-parser@ts5.2 @types/cookie-parser@ts5.2 @types/ejs@ts5.2 @types/express@ts5.2 @types/express-ejs-layouts@ts5.2 @types/js-yaml@ts5.2 @types/jsonwebtoken@ts5.2 @types/morgan@ts5.2 @types/nodemailer@ts5.2 @types/qrcode@ts5.2 @types/ws@ts5.2
+8 verbose argv "install" "--ignore-scripts" "@types/bcrypt@ts5.2" "@types/bcryptjs@ts5.2" "@types/body-parser@ts5.2" "@types/cookie-parser@ts5.2" "@types/ejs@ts5.2" "@types/express@ts5.2" "@types/express-ejs-layouts@ts5.2" "@types/js-yaml@ts5.2" "@types/jsonwebtoken@ts5.2" "@types/morgan@ts5.2" "@types/nodemailer@ts5.2" "@types/qrcode@ts5.2" "@types/ws@ts5.2" "--save-dev" "--user-agent" "typesInstaller/5.2.2"
+9 verbose logfile logs-max:10 dir:/home/kuzey3258/.npm/_logs/2024-05-19T18_22_44_355Z-
+10 verbose logfile /home/kuzey3258/.npm/_logs/2024-05-19T18_22_44_355Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 http fetch GET 200 https://registry.npmjs.org/@types%2fbcryptjs 257ms (cache revalidated)
+14 http fetch GET 200 https://registry.npmjs.org/@types%2fbcrypt 263ms (cache revalidated)
+15 http fetch GET 200 https://registry.npmjs.org/@types%2fnodemailer 271ms (cache revalidated)
+16 http fetch GET 200 https://registry.npmjs.org/@types%2fmorgan 276ms (cache revalidated)
+17 http fetch GET 200 https://registry.npmjs.org/@types%2fejs 282ms (cache revalidated)
+18 http fetch GET 200 https://registry.npmjs.org/@types%2fexpress 284ms (cache revalidated)
+19 http fetch GET 200 https://registry.npmjs.org/@types%2fws 282ms (cache revalidated)
+20 http fetch GET 200 https://registry.npmjs.org/@types%2fjsonwebtoken 286ms (cache revalidated)
+21 http fetch GET 200 https://registry.npmjs.org/@types%2fbody-parser 290ms (cache revalidated)
+22 http fetch GET 200 https://registry.npmjs.org/@types%2fqrcode 287ms (cache revalidated)
+23 http fetch GET 200 https://registry.npmjs.org/@types%2fcookie-parser 291ms (cache revalidated)

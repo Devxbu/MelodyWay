@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Css Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+
+    <title>
+        MelodyWay
+    </title>
+
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="header-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 nav-logo">
+                        <a href="index"><img src="/public/img/logo_veritical.png" width='220' height='120'
+                                alt="Logo"></a>
+                    </div>
+                    <div class="header-menu-div" id="header-menu-div">
+                        <nav class="header-menu-nav">
+                            <div class="menu-sidebar">
+                                <div class="menu-sidebar-top">
+                                    <div class="menu-sidebar-top-close" onclick="menuClose()">
+                                        <i class="bi bi-x" onclick="menuClose()"></i>
+                                    </div>
+                                </div>
+                                <div class="menu-sidebar-bottom">
+                                    <ul class="menu-sidebar-bottom-ul">
+                                        <li class="menu-sidebar-bottom-li"><a href="/" data-replace="Anasayfa"
+                                                class="nav-animation menu-sidebar-bottom-a"><span>Anasayfa</span></a>
+                                        </li>
+                                        <li class="menu-sidebar-bottom-li"><a href="/#about" data-replace="Hakkımızda"
+                                                class="nav-animation menu-sidebar-bottom-a"><span>Hakkımızda</span></a>
+                                        </li>
+                                        <!-- <li class="menu-sidebar-bottom-li"><a href="/#pricing"
+                                                data-replace="Fiyatlandırma"
+                                                class="nav-animation menu-sidebar-bottom-a"><span>Fiyatlandırma</span></a>
+                                        </li> -->
+                                        <li class="menu-sidebar-bottom-li"><a href="/#contact" data-replace="İşletmeler İçin MelodyWay"
+                                                class="nav-animation menu-sidebar-bottom-a"><span>İşletmeler İçin MelodyWay</span></a>
+                                        </li>
+                                        <% if(user !=null){ %>
+                                            <% if(user.auth==1){ %>
+                                                <li class="menu-sidebar-bottom-li"><a href="/voteInfo"
+                                                        data-replace="Oylamayı İzle"
+                                                        class="nav-animation menu-sidebar-bottom-a"><span>Oylamayı
+                                                            İzle</span></a>
+                                                </li>
+                                                <% } else if(user.auth==0){ %>
+                                                    <li class="menu-sidebar-bottom-li"><a href="/vote"
+                                                            data-replace="Şarkı Oyla"
+                                                            class="nav-animation menu-sidebar-bottom-a"><span>Şarkı
+                                                                Oyla</span></a>
+                                                    </li>
+                                                    <% } %>
+                                                        <li class="menu-sidebar-bottom-li"><a href="/logout"
+                                                                class="menu-sidebar-bottom-a"><i
+                                                                    class="bi bi-box-arrow-left nav-logout"></i></a>
+                                                        </li>
+                                                        <% } else{ %>
+                                                            <li class="menu-sidebar-bottom-li"><a href="/login"
+                                                                    data-replace="Giriş Yap"
+                                                                    class="nav-animation menu-sidebar-bottom-a"><span>Giriş
+                                                                        Yap</span></a>
+                                                            </li>
+                                                            <% } %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-9 nav-links">
+                        <div class="header-menu" id="header-menu" onclick="menuOpen()">
+                            <i class="bi bi-list"></i>
+                        </div>
+                        <ul class="nav-ul">
+                            <li>
+                                <a data-replace="Anasayfa" class="nav-animation nav-a"
+                                    href="/"><span>Anasayfa</span></a>
+                            </li>
+                            <li>
+                                <a data-replace="Hakkımızda" class="nav-animation nav-a"
+                                    href="/#about"><span>Hakkımızda</span></a>
+                            </li>
+                            <!-- <li>
+                                <a data-replace="Fiyatlandırma" class="nav-animation nav-a"
+                                    href="/pricing"><span>Fiyatlandırma</span></a>
+                            </li> -->
+                            <li>
+                                <a data-replace="İşletmeler İçin MelodyWay" class="nav-animation nav-a"
+                                    href="/#contact"><span>İşletmeler İçin MelodyWay</span></a>
+                            </li>
+                            <% if(user !=null){ %>
+                                <% if(user.auth==0){ %>
+                                    <li>
+                                        <a data-replace="Oylamayı İzle" class="nav-animation nav-a"
+                                            href="/voteInfo"><span>
+                                                Oylamayı İzle</span></a>
+                                    </li>
+                                    <% } else if(user.auth==1){ %>
+                                        <li>
+                                            <a data-replace="Şarkı Oyla" class="nav-animation nav-a" href="/vote"><span>Şarkı
+                                                    Oyla</span></a>
+                                        </li>
+                                        <% } %>
+                                        <li>
+                                            <a class="nav-a" href="/logout"><i
+                                                    class="bi bi-box-arrow-right nav-logout"></i></a>
+                                        </li>
+                                        <% } else{ %>
+                                            <li>
+                                                <a data-replace="Giriş Yap" class="nav-animation nav-a"
+                                                    href="/login"><span>Giriş Yap</span></a>
+                                            </li>
+                                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <%- body%>
+        <footer>
+            <% if(user != null){ %>
+                <input type="hidden" name="userId" id="userId" value="<%= user._id %>">
+                <input type="hidden" name="userCafe" id="userCafe" value="<%= user.cafe %>">
+                <% } %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <p class="footer-copyright">
+                           MelodyWay - Bütün Haklar Saklıdır <span>&copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script>
+                            </span>
+                            <span class="creator">
+                                Developed by Akif Kara & Bahri Uranlı
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 footer-col-social">
+                    </div>
+                </div>
+            </div>
+            <!-- Social -->
+        </footer>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"
+    integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="/public/js/main.js"></script>
+
+</html>

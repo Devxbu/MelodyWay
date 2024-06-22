@@ -1,0 +1,57 @@
+<main>
+    <section class="vote-section">
+        <div class="section-header">
+            <div class="section-title">
+                <p>Şarkı Oyla</p>
+            </div>
+            <div class="section-subtitle">
+                <p>Çalmasını İstediğin Şarkıyı Oyla!</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" id="songsContainer"></div>
+        </div>
+    </section>
+
+    <div class="container" id="encoreStatusDiv" style="display: none; padding: 0;">
+        <div class="" role="alert"
+            style="display: flex; justify-content: space-between;" id="successAlert">
+            <p id="encoreStatusP" style="margin: 0; padding: 0;"></p>
+            <button type="button" class="btn-close" aria-label="Close"
+                style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+    </div>
+
+    <section style="display: none;" class="encore">
+        <div class="section-header">
+            <div class="section-title">
+                <p>İstek Şarkı</p>
+            </div>
+            <div class="section-subtitle">
+                <p>Çalmasını İstediğin Şarkıyı Yaz! <%= user.cafe%></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row encore-row">
+                <div class="col-12 encore-input-col">
+                    <div class="encore-input-div">
+                        <input placeholder="Şarkı İsmini Yazın.." type="text" name="encore" class="encore-input"
+                            id="encore-input">
+                    </div>
+                    <input value="<%= user._id%>" type="hidden" id="userIdInput">
+                    <div style="display: flex; justify-content: center;">
+                        <div id='filteredSongs'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+    function closeAlert() {
+        var successAlert = document.getElementById('successAlert');
+        successAlert.style.display = 'none';
+    }
+</script>

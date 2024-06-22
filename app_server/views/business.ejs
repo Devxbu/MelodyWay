@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>MelodyWay</title>
+</head>
+<body>
+    <section class="business">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 business-col">
+                    <div class="business-box">
+                        <form action="/business" method="post">
+                            <div class="container">
+                                <div class="row">
+                                    <p class="businessText">İşletmeler İçin Melodyway</p>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="name" placeholder="İsminiz..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="surname" placeholder="Soyisminiz..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="city" placeholder="İliniz..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="district" placeholder="İlçeniz..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="caffeName" placeholder="Kafe Adınız..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="tableAmount" placeholder="Masa Sayınız..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="phone" placeholder="Telefon Numaranız..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="text" class="business-input form-control" name="subject" placeholder="Konunuz..." required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <textarea cols="80" type="text" class="business-textarea form-control" name="message" placeholder="Mesajınız..." required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 business-btn-col">
+                                        <button class="business-btn">Gönder</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

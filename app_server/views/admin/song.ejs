@@ -1,0 +1,50 @@
+<!-- Panel Start -->
+<style>
+  .home {
+    background: transparent !important;
+  }
+</style>
+<section class="home">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-10 home-form">
+        <div class="form-text">
+          <p>
+            Oylama
+          </p>
+        </div>
+        <div class="container" id="encoreStatusDiv" style="display: none; padding: 0;">
+          <div class="" role="alert"
+            style="display: flex; justify-content: space-between;" id="successAlert">
+            <p id="encoreStatusP" style="margin: 0; padding: 0;"></p>
+            <button type="button" class="btn-close" aria-label="Close"
+              style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+        </div>
+        <table class="form-table table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">Şarkı Kapağı</th>
+              <th scope="col">Şarkı İsmi</th>
+              <th scope="col">Grup Adı</th>
+              <th scope="col">Oy Sayısı</th>
+              <th scope="col" style="float:right">
+                <button id="voteButton" onclick="voteStart()" class="btn btn-outline-info">Oylamayı Başlat</button>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="votingSong"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Panel End -->
+<script>
+  function closeAlert() {
+      var successAlert = document.getElementById('successAlert');
+      successAlert.style.display = 'none';
+  }
+</script>

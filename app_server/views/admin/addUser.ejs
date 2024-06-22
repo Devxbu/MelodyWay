@@ -1,0 +1,52 @@
+
+<!-- Panel Start -->
+<section class="home">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-10 home-form">
+                <div class="form-text">
+                    <p>
+                        Kullanıcı Ekle
+                    </p>
+                </div>
+                <form action="/admin/user/<%= admin.cafe %>" method="post">
+                    <div class="form-row">
+                        <div class="form-group mb-4">
+                            <label for="title">Ad</label>
+                            <input type="text" name="name" class="form-input form-control form-control-lg" id="title"
+                                placeholder="İsim">
+                        </div>
+                        <% if (admin.cafe == 'admin') { %>
+                            <div class="form-group mb-4">
+                                <label for="title">Kafe</label>
+                                <select name="cafe" class="form-select form-control form-control-lg" id="title">
+                                    <% for(let i = 0; i < fetch.length; i++) { %>
+                                        <option value="<%= fetch[i].cafe %>"><%= fetch[i].name %></option>
+                                    <% } %>
+                                </select>
+                            </div>
+                        <% }  else { %>
+                            <input type="hidden" name="cafe" value="<%= admin.cafe %>">
+                        <% } %>
+                        
+                        <div class="form-group mb-4">
+                            <label for="title">Yetki</label>
+                            <select name="auth" class="form-select form-control form-control-lg" id="title">
+                                <option value="0" selected>Admin</option>
+                                <option value="1">Müşteri</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="title">Kişi Sayısı</label>
+                            <input type="number" min="1" name="amount" class="form-input form-control form-control-lg" id="title"
+                                placeholder="Kişi Sayısı">
+                        </div>
+                    </div>
+                    <button type="submit" value="addUser" name="addUser"
+                        class="form-btn mt-2 btn btn-lg btn-outline-primary">Ekle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Panel End -->

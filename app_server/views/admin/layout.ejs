@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link Css -->
+    <link rel="stylesheet" href="/public/admin/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/admin/css/sweetalert2.css">
+    <title>MelodyWay | Admin</title>
+</head>
+
+<body>
+    <!-- Sidebar Start -->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Lorem</span>
+                    <span class="job">Lorem, ipsum.</span>
+                </div>
+            </div>
+
+            <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <!-- <li class="search-box">
+                        <i class="bx bx-search icon"></i>
+                        <input type="search" placeholder="Search...">
+                </li> -->
+                <ul class="menu-links" style="padding: 0;">
+                    <% if(admin.cafe=='admin') { %>
+                        <li class="nav-link">
+                            <a href="/admin/">
+                                <i class="bx bx-home-alt icon"></i>
+                                <span class="text nav-text">Admin Paneli</span>
+                            </a>
+                        </li>
+                        <% } %>
+                            <li class="nav-link">
+                                <a href="/admin/song/<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>">
+                                    <i class="bx bx-music icon"></i>
+                                    <span class="text nav-text">Oylama</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/admin/playlist/<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>">
+                                    <i class='bx bxs-playlist icon'></i>
+                                    <span class="text nav-text">Playlist</span>
+                                </a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="/admin/encores/<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>">
+                                    <i class="bx bx-select-multiple icon"></i>
+                                    <span class="text nav-text">İstek Şarkılar</span>
+                                </a>
+                            </li>
+                            <% if(admin.cafe=='admin') { %>
+                                <li class="nav-link">
+                                    <a href="/admin/cafes">
+                                        <i class="bx bx-coffee icon"></i>
+                                        <span class="text nav-text">Kafeler</span>
+                                    </a>
+                                </li>
+                                <li class="nav-link">
+                                    <a href="/admin/admin">
+                                        <i class="bx bx-user icon"></i>
+                                        <span class="text nav-text">Admin Hesapları</span>
+                                    </a>
+                                </li>
+                                <% } %>
+                                <li class="nav-link">
+                                    <a href="/admin/user/<%= admin.cafe %>">
+                                        <i class="bx bx-user-circle icon"></i>
+                                        <span class="text nav-text">Kullanıcı Hesapları</span>
+                                    </a>
+                                </li>
+                                <% if(admin.cafe=='admin') { %>
+                                <li class="nav-link">
+                                    <a href="/admin/messages">
+                                        <i class="bx bx-message icon"></i>
+                                        <span class="text nav-text">Mesajlar</span>
+                                    </a>
+                                </li>
+                                <% } %>
+                                    <li class="nav-link">
+                                        <a href="/admin/table/<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>">
+                                            <i class="bx bx-grid-alt icon"></i>
+                                            <span class="text nav-text">Masalar</span>
+                                        </a>
+                                    </li>
+                                    <% if(admin.autoPlay == false) { %>
+                                    <li class="nav-link">
+                                        <a href="/admin/order/<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>">
+                                            <i class="bx bx-add-to-queue icon"></i>
+                                            <span class="text nav-text">Şarkı Sırası</span>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                                    <% if(admin.cafe=='admin') { %>
+                                    <li class="nav-link">
+                                        <a href="/admin/social">
+                                            <i class="bx bxl-instagram icon"></i>
+                                            <span class="text nav-text">Sosyal</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="/admin/contact">
+                                            <i class="bx bx-phone icon"></i>
+                                            <span class="text nav-text">İletişim</span>
+                                        </a>
+                                    </li>
+                                    <% } %>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/admin/logout">
+                        <i class="bx bx-log-out icon"></i>
+                        <span class="text nav-text">Çıkış Yap</span>
+                    </a>
+                </li>
+
+
+
+
+
+            </div>
+
+        </div>
+    </nav>
+    <input type="hidden" name="cafeName" id="cafeName" value="<%= admin.cafe == 'admin' ? admin.tempCafe : admin.cafe %>">
+    <!-- Sidebar End -->
+    <%- body%>
+
+</body>
+<!-- Link javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"
+integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"></script>
+<script src="/public/admin/js/sweetalert2.all.min.js"></script>
+<script src="/public/admin/js/script.js"></script>
+
+</html>

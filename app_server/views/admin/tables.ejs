@@ -1,0 +1,26 @@
+<section class="home">
+    <div class="container">
+        <div class="row">
+            <% if(typeof fetch !='undefined' ) { for(var i=0; i<fetch.length; i++) { %>
+                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 table-col" style="cursor: pointer;">
+                    <div style="cursor: pointer;" id="tableOpen" class="table-box <%= fetch[i].isEncored ? 'active-table' : 'normal-table' %>">
+                        <input type="hidden" value="<%= fetch[i]._id %>" name="id" id="id">
+                        <input type="hidden" value="<%= fetch[i].cafe %>" name="cafe" id="cafe">
+                        <input type="hidden" value="<%= fetch[i].name %>" name="name" id="name">
+                        <input type="hidden" value="<%= fetch[i].encoredTime%>" name="encoredTime" id="encoredTime">
+                        <input type="hidden" value="<%= fetch[i].encoredSong %>" name="encoredSong" id="encoredSong">
+                        <input type="hidden" value="<%= fetch[i].encoredSong.songName %>" name="songName" id="songName">
+                        <input type="hidden" value="<%= fetch[i].isEncored %>" name="isEncored" id="isEncored">
+                        <div class="table-info">
+                            <h3 class="table-title">
+                                <%= fetch[i].name %>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <% } } %>
+                <div id="tableOverlay"></div>
+                <div class="tableDetail" style="z-index: -10;" id="tableDetail"></div>
+        </div>
+    </div>
+</section>

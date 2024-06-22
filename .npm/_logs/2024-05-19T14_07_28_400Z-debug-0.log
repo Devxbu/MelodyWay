@@ -1,0 +1,15 @@
+0 verbose cli /usr/local/nvm/versions/node/v20.13.0/bin/node /usr/local/nvm/versions/node/v20.13.0/bin/npm
+1 info using npm@10.7.0
+2 info using node@v20.13.0
+3 silly config:load:file:/usr/local/nvm/versions/node/v20.13.0/lib/node_modules/npm/npmrc
+4 silly config:load:file:/home/kuzey3258/.npmrc
+5 silly config:load:file:/usr/local/nvm/versions/node/v20.13.0/etc/npmrc
+6 verbose title npm view nodemailer description dist-tags.latest homepage version time
+7 verbose argv "view" "--json" "--" "nodemailer" "description" "dist-tags.latest" "homepage" "version" "time"
+8 verbose logfile logs-max:10 dir:/home/kuzey3258/.npm/_logs/2024-05-19T14_07_28_400Z-
+9 verbose logfile /home/kuzey3258/.npm/_logs/2024-05-19T14_07_28_400Z-debug-0.log
+10 silly logfile start cleaning logs, removing 1 files
+11 silly logfile done cleaning log files
+12 http fetch GET 200 https://registry.npmjs.org/nodemailer 197ms (cache revalidated)
+13 verbose exit 0
+14 info ok

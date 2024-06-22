@@ -1,0 +1,124 @@
+<% if(admin.cafe!='admin'){ %>
+  <script>
+    location.assign(`/admin/song/<%= admin.cafe%>`);
+</script>
+  <% } %>
+<!-- Panel Start -->
+    <section class="home">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-10 home-form">
+        <div class="form-text">
+          <p>
+            Mesajlar
+          </p>
+        </div>
+        <% if(typeof status !='undefined' && status==true){ %>
+
+          <div class="container" style="padding: 0;">
+              <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: flex; justify-content: space-between;" id="successAlert">
+                  İşlem Başarılı Bir Şekilde Gerçekleştirilmiştir
+                  <button type="button" class="btn-close" aria-label="Close" style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+              </div>
+              <% } %>
+              <% if(typeof status !='undefined' && status==false){ %>
+                
+          <div class="container" style="padding: 0;">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: flex; justify-content: space-between;" id="successAlert">
+                İşlem Gerçekleştirilemedi
+                  <button type="button" class="btn-close" aria-label="Close" style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                      <span aria-hidden="true">×</span>
+                  </button>
+              </div>
+          </div>
+              <% } %>
+        <table class="form-table table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col">İsim</th>
+              <th scope="col">Soyisim</th>
+              <th scope="col">E-Posta</th>
+              <th scope="col">Konu</th>
+              <th scope="col">Mesaj</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i = 0; i < fetch.length; i++){%>
+            <tr>
+              <td><%= fetch[i]['name'] %></td>
+              <td><%= fetch[i]['surname'] %></td>
+              <td><%= fetch[i]['mail'] %></td>
+              <td><%= fetch[i]['subject'] %></td>
+              <td><%= fetch[i]['message'] %></td>
+              <td style="float:right">
+                <span id="<%= fetch[i]['_id'] %>">
+                  <input type="hidden" name="id" value="<%= fetch[i]['_id'] %>">
+                      <button name="deleteMessage" data-action="deleteMessage" id="deleteBtn" class="deleteBtn btn btn-outline-danger">Mesajı Sil</button>
+                  </span>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Panel End -->
+    <script>
+      // Select all delete buttons by class name
+  const deleteButtons = document.querySelectorAll(".deleteBtn");
+  
+  // Attach a click event handler to each delete button
+  deleteButtons.forEach((deleteBtn) => {
+      deleteBtn.addEventListener("click", function () {
+          const parentSpan = deleteBtn.parentElement;
+          const id = parentSpan.querySelector('[name="id"]').value;
+  
+          Swal.fire({
+              title: 'Emin misin?',
+              text: "Bu işlem geri alınamaz!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#d33',
+              cancelButtonColor: '#3085d6',
+              confirmButtonText: 'Evet!',
+              cancelButtonText: 'Hayır'
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  const form = document.createElement('form');
+                  form.method = 'POST';
+                  form.action = '/admin/messages';
+  
+                  // Create hidden input for id
+                  const idInput = document.createElement('input');
+                  idInput.type = 'hidden';
+                  idInput.name = 'id';
+                  idInput.value = id;
+  
+                  // Create deleteContent button as an input
+                  const deleteContentButton = document.createElement('input');
+                  deleteContentButton.type = 'text';
+                  deleteContentButton.name = 'deleteMessage';
+                  deleteContentButton.value = 'deleteMessage';
+  
+  
+                  form.appendChild(deleteContentButton);
+                  form.appendChild(idInput);
+                  document.body.appendChild(form);
+  
+                  // Submit the form
+                  form.submit();
+              }
+          });
+      });
+  });
+  
+  function closeAlert() {
+        var successAlert = document.getElementById('successAlert');
+        successAlert.style.display = 'none';
+    }
+  </script>

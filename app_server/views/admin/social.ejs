@@ -1,0 +1,73 @@
+<% if(admin.cafe!='admin'){ %>
+    <script>
+        location.assign(`/admin/song/<%= admin.cafe%>`);
+    </script>
+    <% } %>
+    <!-- Panel Start -->
+    <section class="home">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-10 home-form">
+                    <div class="form-text">
+                        <p>
+                            Sosyal Medya Hesapları
+                        </p>
+                    </div>
+                    <% if(typeof status !='undefined' && status==true){ %>
+
+                        <div class="container" style="padding: 0;">
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: flex; justify-content: space-between;" id="successAlert">
+                                İşlem Başarılı Bir Şekilde Gerçekleştirilmiştir
+                                <button type="button" class="btn-close" aria-label="Close" style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                              </div>
+                            </div>
+                            <% } %>
+                            <% if(typeof status !='undefined' && status==false){ %>
+                              
+                        <div class="container" style="padding: 0;">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="display: flex; justify-content: space-between;" id="successAlert">
+                              İşlem Gerçekleştirilemedi
+                                <button type="button" class="btn-close" aria-label="Close" style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                            <% } %>
+                    <form action="/admin/social" method="post">
+                        <div class="form-row">
+                            <div class="form-group mb-4">
+                                <label for="title">Instagram</label>
+                                <input type="text" name="instagram" class="form-input form-control form-control-lg" id="title" value="<%=fetch['instagram']%>" placeholder="Instagram">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="title">Youtube</label>
+                                <input type="text" name="youtube" class="form-input form-control form-control-lg" id="title" value="<%=fetch['youtube']%>" placeholder="Youtube">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="about">Facebook</label>
+                                <input type="text" name="facebook" class="form-input form-control form-control-lg" id="about" value="<%=fetch['facebook']%>" placeholder="Facebook">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="keyword">Twitter</label>
+                                <input type="text" name="twitter" class="form-input form-control form-control-lg" id="keyword" value="<%=fetch['twitter']%>" placeholder="Twitter">
+                            </div>
+                        </div>
+                        <input type="hidden" name="id" value="<%=fetch['_id']%>">
+                        <button type="submit" name="social" class="form-btn mt-2 btn btn-lg btn-outline-primary">Değiştir</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+    function closeAlert() {
+        var successAlert = document.getElementById('successAlert');
+        successAlert.style.display = 'none';
+    }
+    </script>
+    <!-- Panel End -->

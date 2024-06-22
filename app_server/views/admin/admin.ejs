@@ -1,0 +1,151 @@
+<% if(admin.cafe!='admin'){ %>
+  <script>
+    location.assign(`/admin/song/<%= admin.cafe%>`);
+</script>
+  <% } %>
+<!-- Panel Start -->
+<section class="home">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-10 home-form">
+        <div class="form-text">
+          <p>
+            Admin Hesapları
+          </p>
+        </div>
+        <% if(typeof status !='undefined' && status==true){ %>
+
+          <div class="container" style="padding: 0;">
+            <div class="alert alert-success alert-dismissible fade show" role="alert"
+              style="display: flex; justify-content: space-between;" id="successAlert">
+              İşlem Başarılı Bir Şekilde Gerçekleştirilmiştir
+              <button type="button" class="btn-close" aria-label="Close"
+                style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+          <% } %>
+            <% if(typeof status !='undefined' && status==false){ %>
+
+              <div class="container" style="padding: 0;">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                  style="display: flex; justify-content: space-between;" id="successAlert">
+                  İşlem Gerçekleştirilemedi
+                  <button type="button" class="btn-close" aria-label="Close"
+                    style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+              </div>
+              <% } %>
+                <% if(typeof status !='undefined' && status=='EmailUsing' ){ %>
+
+                  <div class="container" style="padding: 0;">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert"
+                      style="display: flex; justify-content: space-between;" id="successAlert">
+                      Bu E-Posta Adresi Kullanılmaktadır
+                      <button type="button" class="btn-close" aria-label="Close"
+                        style="outline: none; border: none; background: transparent;" onclick="closeAlert()">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                  </div>
+                  <% } %>
+                    <table class="form-table table table-borderless">
+                      <thead>
+                        <tr>
+                          <th scope="col">Ad</th>
+                          <th scope="col">Soyad</th>
+                          <th scope="col">E-Posta</th>
+                          <th scope="col">Kafe</th>
+                          <th scope="col" style="float:right"><a href="/admin/addAdmin"><button style="width: 150px"
+                                class="btn btn-outline-primary">Admin Ekle</button></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <% for(var i=0; i < fetch.length; i++){%>
+                            <td>
+                              <%= fetch[i]['name'] %>
+                            </td>
+                            <td>
+                              <%= fetch[i]['surname'] %>
+                            </td>
+                            <td>
+                              <%= fetch[i]['email'] %>
+                            </td>
+                            <td>
+                              <%= fetch[i]['cafe'] %>
+                            </td>
+                            <td style="float:right">
+                              <span id="<%= fetch[i]['_id'] %>">
+                                <input type="hidden" name="id" value="<%= fetch[i]['_id'] %>">
+                                <button name="deleteAdmin" data-action="deleteAdmin" id="deleteBtn"
+                                  class="deleteBtn btn btn-outline-danger">Sil</button>
+                              </span>
+                            </td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Panel End -->
+<script>
+  // Select all delete buttons by class name
+  const deleteButtons = document.querySelectorAll(".deleteBtn");
+
+  // Attach a click event handler to each delete button
+  deleteButtons.forEach((deleteBtn) => {
+    deleteBtn.addEventListener("click", function () {
+      const parentSpan = deleteBtn.parentElement;
+      const id = parentSpan.querySelector('[name="id"]').value;
+
+      Swal.fire({
+        title: 'Emin misin?',
+        text: "Bu işlem geri alınamaz!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Evet!',
+        cancelButtonText: 'Hayır'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const form = document.createElement('form');
+          form.method = 'POST';
+          form.action = '/admin/admin';
+
+          // Create hidden input for id
+          const idInput = document.createElement('input');
+          idInput.type = 'hidden';
+          idInput.name = 'id';
+          idInput.value = id;
+
+          // Create deleteContent button as an input
+          const deleteContentButton = document.createElement('input');
+          deleteContentButton.type = 'text';
+          deleteContentButton.name = 'deleteAdmin';
+          deleteContentButton.value = 'deleteAdmin';
+
+
+          form.appendChild(deleteContentButton);
+          form.appendChild(idInput);
+          document.body.appendChild(form);
+
+          // Submit the form
+          form.submit();
+        }
+      });
+    });
+  });
+
+  function closeAlert() {
+    var successAlert = document.getElementById('successAlert');
+    successAlert.style.display = 'none';
+  }
+</script>

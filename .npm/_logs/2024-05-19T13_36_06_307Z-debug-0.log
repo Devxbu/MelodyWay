@@ -1,0 +1,72 @@
+0 verbose cli /usr/local/nvm/versions/node/v20.13.0/bin/node /usr/local/nvm/versions/node/v20.13.0/bin/npm
+1 info using npm@10.7.0
+2 info using node@v20.13.0
+3 silly config:load:file:/usr/local/nvm/versions/node/v20.13.0/lib/node_modules/npm/npmrc
+4 silly config:load:file:/home/kuzey3258/.cache/typescript/5.2/.npmrc
+5 silly config:load:file:/home/kuzey3258/.npmrc
+6 silly config:load:file:/usr/local/nvm/versions/node/v20.13.0/etc/npmrc
+7 verbose title npm install @types/js-yaml@ts5.2
+8 verbose argv "install" "--ignore-scripts" "@types/js-yaml@ts5.2" "--save-dev" "--user-agent" "typesInstaller/5.2.2"
+9 verbose logfile logs-max:10 dir:/home/kuzey3258/.npm/_logs/2024-05-19T13_36_06_307Z-
+10 verbose logfile /home/kuzey3258/.npm/_logs/2024-05-19T13_36_06_307Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly logfile done cleaning log files
+13 http fetch GET 200 https://registry.npmjs.org/@types%2fjs-yaml 166ms (cache miss)
+14 silly idealTree buildDeps
+15 silly fetch manifest @types/js-yaml@4.0.9
+16 silly placeDep ROOT @types/js-yaml@4.0.9 OK for:  want: 4.0.9
+17 silly reify moves {}
+18 silly audit bulk request {
+18 silly audit   '@types/basic-auth': [ '1.1.8' ],
+18 silly audit   '@types/bcrypt': [ '5.0.2' ],
+18 silly audit   '@types/bcryptjs': [ '2.4.6' ],
+18 silly audit   '@types/body-parser': [ '1.19.5' ],
+18 silly audit   '@types/bytes': [ '3.1.4' ],
+18 silly audit   '@types/connect': [ '3.4.38' ],
+18 silly audit   '@types/content-type': [ '1.1.8' ],
+18 silly audit   '@types/cookie-parser': [ '1.4.7' ],
+18 silly audit   '@types/cookie-signature': [ '1.1.2' ],
+18 silly audit   '@types/debug': [ '4.1.12' ],
+18 silly audit   '@types/depd': [ '1.1.36' ],
+18 silly audit   '@types/ee-first': [ '1.1.3' ],
+18 silly audit   '@types/ejs': [ '3.1.5' ],
+18 silly audit   '@types/express': [ '4.17.21' ],
+18 silly audit   '@types/express-ejs-layouts': [ '2.5.4' ],
+18 silly audit   '@types/express-serve-static-core': [ '4.19.0' ],
+18 silly audit   '@types/http-errors': [ '2.0.4' ],
+18 silly audit   '@types/jsonwebtoken': [ '9.0.6' ],
+18 silly audit   '@types/jws': [ '3.2.10' ],
+18 silly audit   '@types/lodash': [ '4.17.1' ],
+18 silly audit   '@types/lodash.includes': [ '4.3.9' ],
+18 silly audit   '@types/lodash.isboolean': [ '3.0.9' ],
+18 silly audit   '@types/lodash.isinteger': [ '4.0.9' ],
+18 silly audit   '@types/lodash.isnumber': [ '3.0.9' ],
+18 silly audit   '@types/lodash.isplainobject': [ '4.0.9' ],
+18 silly audit   '@types/lodash.isstring': [ '4.0.9' ],
+18 silly audit   '@types/lodash.once': [ '4.1.9' ],
+18 silly audit   '@types/merge-descriptors': [ '1.0.3' ],
+18 silly audit   '@types/mime': [ '1.3.5' ],
+18 silly audit   '@types/morgan': [ '1.9.9' ],
+18 silly audit   '@types/ms': [ '0.7.34' ],
+18 silly audit   '@types/node': [ '20.12.11' ],
+18 silly audit   '@types/nodemailer': [ '6.4.15' ],
+18 silly audit   '@types/on-finished': [ '2.3.4' ],
+18 silly audit   '@types/on-headers': [ '1.0.3' ],
+18 silly audit   '@types/qrcode': [ '1.5.5' ],
+18 silly audit   '@types/qs': [ '6.9.15' ],
+18 silly audit   '@types/range-parser': [ '1.2.7' ],
+18 silly audit   '@types/send': [ '0.17.4' ],
+18 silly audit   '@types/serve-static': [ '1.15.7' ],
+18 silly audit   '@types/type-is': [ '1.6.6' ],
+18 silly audit   '@types/ws': [ '8.5.10' ],
+18 silly audit   'types-registry': [ '0.1.685' ],
+18 silly audit   'undici-types': [ '5.26.5' ],
+18 silly audit   '@types/js-yaml': [ '4.0.9' ]
+18 silly audit }
+19 silly tarball no local data for @types/js-yaml@https://registry.npmjs.org/@types/js-yaml/-/js-yaml-4.0.9.tgz. Extracting by manifest.
+20 http fetch GET 200 https://registry.npmjs.org/@types/js-yaml/-/js-yaml-4.0.9.tgz 78ms (cache miss)
+21 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 177ms
+22 silly audit report {}
+23 silly ADD node_modules/@types/js-yaml
+24 verbose exit 0
+25 info ok

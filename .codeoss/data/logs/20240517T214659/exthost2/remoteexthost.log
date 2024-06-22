@@ -1,0 +1,68 @@
+2024-05-17 21:54:38.038 [info] Extension host with pid 2030 started
+2024-05-17 21:54:38.073 [info] Lock '/home/kuzey3258/.codeoss/data/User/workspaceStorage/56c4f9dc/vscode.lock': Lock acquired.
+2024-05-17 21:54:38.359 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2024-05-17 21:54:38.367 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2024-05-17 21:54:39.880 [error] No bundle location found for extension vscode.npm
+2024-05-17 21:54:39.928 [error] No bundle location found for extension vscode.git-base
+2024-05-17 21:54:39.932 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2024-05-17 21:54:39.932 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2024-05-17 21:54:40.287 [error] No bundle location found for extension vscode.github
+2024-05-17 21:54:40.324 [warning] Using default string since no string found in i18n bundle that has the key: Log level: {0}
+2024-05-17 21:54:40.327 [error] No bundle location found for extension vscode.git
+2024-05-17 21:54:40.417 [warning] Using default string since no string found in i18n bundle that has the key: Log level: {0}
+2024-05-17 21:54:40.420 [warning] Using default string since no string found in i18n bundle that has the key: Validating found git in: "{0}"
+2024-05-17 21:54:40.434 [warning] Using default string since no string found in i18n bundle that has the key: Enables the following features: {0}
+2024-05-17 21:54:40.434 [warning] Using default string since no string found in i18n bundle that has the key: Using git "{0}" from "{1}"
+2024-05-17 21:54:40.453 [warning] Using default string since no string found in i18n bundle that has the key: Git History
+2024-05-17 21:54:40.456 [warning] Using default string since no string found in i18n bundle that has the key: Copy vscode.dev Link
+2024-05-17 21:54:43.372 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2024-05-17 21:54:43.628 [info] ExtensionService#_doActivateExtension redhat.fabric8-analytics, startup: true, activationEvent: 'workspaceContains:**/package.json,**/pom.xml,**/requirements.txt,**/go.mod'
+2024-05-17 21:54:44.404 [error] No bundle location found for extension vscode.emmet
+2024-05-17 21:54:44.507 [error] No bundle location found for extension redhat.fabric8-analytics
+2024-05-17 21:54:44.628 [info] Eager extensions activated
+2024-05-17 21:54:44.628 [info] ExtensionService#_doActivateExtension EditorConfig.EditorConfig, startup: false, activationEvent: 'onStartupFinished'
+2024-05-17 21:54:44.629 [info] ExtensionService#_doActivateExtension google.cloud-shell, startup: false, activationEvent: 'onStartupFinished'
+2024-05-17 21:54:44.629 [info] ExtensionService#_doActivateExtension googlecloudtools.cloudcode, startup: false, activationEvent: 'onStartupFinished'
+2024-05-17 21:54:44.629 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2024-05-17 21:54:44.630 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2024-05-17 21:54:45.371 [error] No bundle location found for extension googlecloudtools.cloudcode
+2024-05-17 21:54:47.409 [error] No bundle location found for extension google.cloud-shell
+2024-05-17 21:54:47.409 [error] No bundle location found for extension vscode.debug-auto-launch
+2024-05-17 21:54:47.409 [error] No bundle location found for extension EditorConfig.EditorConfig
+2024-05-17 21:54:47.410 [error] No bundle location found for extension vscode.merge-conflict
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto Attach: Disabled
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto Attach: Always
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto Attach: Smart
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto Attach: With Flag
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Disabled
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Always
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Smart
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Only With Flag
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto attach is disabled and not shown in status bar
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto attach to every Node.js process launched in the terminal
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto attach when running scripts that aren't in a node_modules folder
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Only auto attach when the `--inspect` flag is given
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Toggle auto attach in this workspace
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Toggle auto attach on this machine
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Temporarily disable auto attach in this session
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Re-enable auto attach
+2024-05-17 21:54:47.441 [warning] Using default string since no string found in i18n bundle that has the key: Auto Attach: Disabled
+2024-05-17 21:54:47.491 [warning] Using default string since no string found in i18n bundle that has the key: (Current Change)
+2024-05-17 21:54:47.492 [warning] Using default string since no string found in i18n bundle that has the key: (Incoming Change)
+2024-05-17 21:54:47.583 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-05-17 21:54:47.584 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2024-05-17 21:54:48.552 [error] No bundle location found for extension vscode.json-language-features
+2024-05-17 21:54:48.629 [warning] Using default string since no string found in i18n bundle that has the key: Configure
+2024-05-17 21:54:48.629 [warning] Using default string since no string found in i18n bundle that has the key: JSON Language Server
+2024-05-17 21:54:48.635 [error] No bundle location found for extension vscode.typescript-language-features
+2024-05-17 21:54:48.724 [warning] Using default string since no string found in i18n bundle that has the key: Learn more about managing TypeScript versions
+2024-05-17 21:54:48.780 [warning] Using default string since no string found in i18n bundle that has the key: JSON: Schema Resolution Error
+2024-05-17 21:54:48.957 [warning] Using default string since no string found in i18n bundle that has the key: Unable to resolve schema. Click to retry.
+2024-05-17 21:54:48.957 [warning] Using default string since no string found in i18n bundle that has the key: JSON Validation Status
+2024-05-17 21:54:48.958 [warning] Using default string since no string found in i18n bundle that has the key: Loading JSON info
+2024-05-17 21:54:48.963 [warning] Using default string since no string found in i18n bundle that has the key: No Schema Validation
+2024-05-17 21:54:48.963 [warning] Using default string since no string found in i18n bundle that has the key: no JSON schema configured
+2024-05-17 21:54:48.963 [warning] Using default string since no string found in i18n bundle that has the key: Show Schemas
+2024-05-17 21:54:52.929 [info] Extension host terminating: received terminate message from renderer
+2024-05-17 21:54:52.930 [info] Lock '/home/kuzey3258/.codeoss/data/User/workspaceStorage/56c4f9dc/vscode.lock': Marking the lockfile as scheduled to be released in 6000 ms.
+2024-05-17 21:54:52.960 [info] Extension host with pid 2030 exiting with code 0

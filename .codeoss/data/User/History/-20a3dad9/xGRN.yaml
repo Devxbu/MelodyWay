@@ -1,0 +1,49 @@
+runtime: nodejs18
+instance_class: F2
+
+env_variables:
+  NODE_ENV: 'production'
+  ACCESS_TOKEN_SECRET: '!access^token*secret'
+  REFRESH_TOKEN_SECRET: '!refresh%token@secret'
+  ACCESS_TOKEN_EXPIRE_TIME: '2h'
+  REFRESH_TOKEN_EXPIRE_TIME: '2d'
+
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+
+# runtime: nodejs
+# env: flex
+
+# runtime_config:
+#   node_version: 20.0.0
+
+# manual_scaling:
+#   instances: 1
+
+# resources:
+#   cpu: 1
+#   memory_gb: 0.5
+#   disk_size_gb: 10
+
+# resources:
+#   cpu: 1
+#   memory_gb: 0.5
+
+# servis tipini belirtin
+# service: default
+
+# bu bölüm, hangi URL'lerin hangi servislerle eşleşeceğini belirtir
+# handlers:
+# - url: /.*
+#   script: auto
+
+# gerekirse otomatik olarak ölçeklendirme ayarları
+# automatic_scaling:
+#   min_num_instances: 1
+#   max_num_instances: 10
+#   cpu_utilization:
+#     target_utilization: 0.65
+
